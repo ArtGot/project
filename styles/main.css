@@ -1,14 +1,14 @@
 @import url("https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i&display=swap&subset=cyrillic,cyrillic-ext");
 @font-face {
   font-family: 'Gagalin';
-  src: url("../../fonts/Gagalin-Regular.woff2") format("woff2"), url("../../fonts/Gagalin-Regular.woff") format("woff");
+  src: url("/fonts/Gagalin-Regular.woff2") format("woff2"), url("/fonts/Gagalin-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Lifehack';
-  src: url("../../fonts/Lifehack_Medium.woff2") format("woff2"), url("../../fonts//Lifehack_Medium.woff") format("woff");
+  src: url("/fonts/Lifehack_Medium.woff2") format("woff2"), url("/fonts//Lifehack_Medium.woff") format("woff");
   font-weight: medium;
   font-style: normal;
 }
@@ -468,7 +468,7 @@ a {
 }
 
 .hero {
-  background: url("../../img/hero/hero-bg.png") center center/cover no-repeat;
+  background: url("/img/hero/hero-bg.png") center center/cover no-repeat;
   color: #fff;
   padding-top: 12px;
 }
@@ -594,7 +594,7 @@ a {
 }
 
 .features {
-  background: url("../../img/features/features-bg.png") center center/cover no-repeat;
+  background: url("/img/features/features-bg.png") center center/cover no-repeat;
 }
 
 .features__list {
