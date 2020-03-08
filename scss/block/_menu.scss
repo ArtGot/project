@@ -1,0 +1,36 @@
+$itemMargin: 15px;
+
+.menu__list {
+   display: flex;
+   align-items: center;
+}
+
+.menu__item {
+   display: flex;
+   align-items: center;
+   margin-right: $itemMargin;
+
+   &:before {
+      content: "";
+      display: block;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: currentColor;
+   }
+
+   &:first-child {
+      &:before {
+         display: none;
+      }
+   }
+
+}
+
+.menu__link {
+   text-decoration: none;
+   text-transform: uppercase;
+   margin-left: $itemMargin;
+   font-size: 13px;
+   font-weight: 500;
+}

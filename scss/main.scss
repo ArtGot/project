@@ -1,0 +1,19 @@
+$orange: #e45028;
+$yellow: #f9b43b;
+$black: #2f3234;
+$red: #e35028;
+
+@import "./layout/fonts";
+@import "./layout/normalize";
+@import "./layout/base";
+
+@import "./block/section";
+@import "./block/hero";
+@import "./block/header";
+@import "./block/menu";
+@import "./block/btn";
+@import "./block/scroll-down";
+@import "./block/_features";
+@import "./block/_feature";
+@import "./block/reviews";
+@import "./block/review";

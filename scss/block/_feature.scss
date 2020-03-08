@@ -1,0 +1,24 @@
+.feature {
+   text-align: center;
+}
+
+.feature__img {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-bottom: 20px;
+}
+
+.feature__title {
+   @include lifehack;
+   font-size: 24px;
+   margin-bottom: 20px;
+}
+
+.feature__text {
+   opacity: 0.8;
+   color: $black;
+   @include ubuntu;
+   font-size: 14px;
+   line-height: 1.7;
+}
