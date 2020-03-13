@@ -1,0 +1,71 @@
+.carte {
+   position: relative;
+   background: url('../img/carte/carte-bg.png') center center/cover no-repeat;
+   justify-content: flex-start;
+}
+
+.carte__content {
+   position: absolute;
+   top: 0;
+   left: 50%;
+   right: 0;
+   bottom: 0;
+}
+
+.carte__list {
+	display: flex;
+}
+
+.carte__item {
+	display: flex;
+	
+	&--activ {
+		.carte__text {
+			width: 100%;
+			padding: 20% 10%;
+		}
+	}
+}
+
+.carte__title {
+   @include gagalin;
+   font-size: 40px;
+   letter-spacing: 1px;
+   color: #fff;
+   writing-mode: vertical-lr;
+   transform: rotate(180deg);
+   height: 100%;
+
+   &--meat {
+      background: url('./../img/carte/meat.png') center center/cover no-repeat;
+   }
+
+   &--vegan {
+      background: url('./../img/carte/vegan.png') center center/cover no-repeat;
+   }
+
+   &--diet {
+      background: url('./../img/carte/diet.png') center center/cover no-repeat;
+   }
+
+}
+
+.carte__title--mask--black {
+   height: 100%;
+   width: 100%;
+   background: rgba(0, 0, 0, .5);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+}
+
+.carte__text {
+   @include ubuntu;
+   font-size: 14px;
+   color: #fff;
+   background: rgba(0, 0, 0, .5);
+   padding: 0;
+	width: 0;
+	overflow: hidden;
+}

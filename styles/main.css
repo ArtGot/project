@@ -463,6 +463,15 @@ a {
   color: #2f3234;
 }
 
+.section__title--color--white {
+  color: #fff;
+}
+
+.section__title--carte {
+  margin-top: 10%;
+  margin-left: 10%;
+}
+
 .section__title--margin--max {
   margin-bottom: 46px;
 }
@@ -819,4 +828,87 @@ a {
   border-bottom: 5px solid #f9b43b;
   margin-top: 0;
   margin-bottom: 2px;
+}
+
+.carte {
+  position: relative;
+  background: url("../img/carte/carte-bg.png") center center/cover no-repeat;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.carte__content {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 0;
+  bottom: 0;
+}
+
+.carte__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.carte__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.carte__item--activ .carte__text {
+  width: 100%;
+  padding: 20% 10%;
+}
+
+.carte__title {
+  font-family: 'Gagalin', Helvetica, sans-serif;
+  font-size: 40px;
+  letter-spacing: 1px;
+  color: #fff;
+  -webkit-writing-mode: vertical-lr;
+      -ms-writing-mode: tb-lr;
+          writing-mode: vertical-lr;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  height: 100%;
+}
+
+.carte__title--meat {
+  background: url("./../img/carte/meat.png") center center/cover no-repeat;
+}
+
+.carte__title--vegan {
+  background: url("./../img/carte/vegan.png") center center/cover no-repeat;
+}
+
+.carte__title--diet {
+  background: url("./../img/carte/diet.png") center center/cover no-repeat;
+}
+
+.carte__title--mask--black {
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.carte__text {
+  font-family: 'Ubuntu', Helvetica, sans-serif;
+  font-size: 14px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 0;
+  width: 0;
+  overflow: hidden;
 }
