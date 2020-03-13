@@ -846,10 +846,20 @@ a {
   bottom: 0;
 }
 
+.carte__container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
 .carte__list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: 100%;
+  widht: 100%;
 }
 
 .carte__item {
@@ -860,7 +870,7 @@ a {
 
 .carte__item--activ .carte__text {
   width: 100%;
-  padding: 20% 10%;
+  padding: 40px 10%;
 }
 
 .carte__title {
@@ -873,7 +883,6 @@ a {
           writing-mode: vertical-lr;
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
-  height: 100%;
 }
 
 .carte__title--meat {
@@ -889,7 +898,6 @@ a {
 }
 
 .carte__title--mask--black {
-  height: 100%;
   width: 100%;
   background: rgba(0, 0, 0, 0.5);
   display: -webkit-box;
@@ -901,7 +909,7 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 2%;
+  padding: 20px 2%;
 }
 
 .carte__text {

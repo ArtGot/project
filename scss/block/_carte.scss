@@ -1,7 +1,7 @@
 .carte {
    position: relative;
    background: url('../img/carte/carte-bg.png') center center/cover no-repeat;
-   justify-content: flex-start;
+	justify-content: flex-start;
 }
 
 .carte__content {
@@ -9,11 +9,21 @@
    top: 0;
    left: 50%;
    right: 0;
-   bottom: 0;
+	bottom: 0;
+}
+
+.carte__container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
 }
 
 .carte__list {
 	display: flex;
+	height: 100%;
+	widht: 100%;
 }
 
 .carte__item {
@@ -22,7 +32,7 @@
 	&--activ {
 		.carte__text {
 			width: 100%;
-			padding: 20% 10%;
+			padding: 40px 10%;
 		}
 	}
 }
@@ -34,7 +44,6 @@
    color: #fff;
    writing-mode: vertical-lr;
    transform: rotate(180deg);
-   height: 100%;
 
    &--meat {
       background: url('./../img/carte/meat.png') center center/cover no-repeat;
@@ -51,13 +60,12 @@
 }
 
 .carte__title--mask--black {
-   height: 100%;
    width: 100%;
    background: rgba(0, 0, 0, .5);
    display: flex;
    justify-content: center;
 	align-items: center;
-	padding: 2%;
+	padding: 20px 2%;
 
 }
 
