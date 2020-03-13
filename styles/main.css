@@ -1010,3 +1010,66 @@ a {
   -webkit-filter: invert(100%);
           filter: invert(100%);
 }
+
+.order-section {
+  background: url("../img/order/order-bg.png") center center/cover no-repeat;
+}
+
+.order {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.order__row {
+  margin-bottom: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.order__col {
+  margin-right: 20px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.order__col:last-child {
+  margin-right: 0;
+}
+
+.order__block {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-right: 20px;
+}
+
+.order__block:last-child {
+  margin-right: 0;
+}
+
+.order__title {
+  margin-bottom: 5px;
+  font-family: 'Ubuntu', Helvetica, sans-serif;
+  font-size: 14px;
+  color: #fff;
+}
+
+.order__input {
+  width: 100%;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+}
+
+.order__input-comments {
+  height: 108px;
+}
+
+.order__radio {
+  font-family: 'Ubuntu', Helvetica, sans-serif;
+  font-size: 14px;
+  color: #fff;
+}

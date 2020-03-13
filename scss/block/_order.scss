@@ -1,0 +1,50 @@
+.order {
+	display: flex;
+}
+
+.order__row {
+	margin-bottom: 14px;
+	display: flex;
+}
+
+.order__col {
+	margin-right: 20px;
+	flex: 1;
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+.order__block {
+	flex: 1;
+	margin-right: 20px;
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+.order__title {
+	margin-bottom: 5px;
+	@include ubuntu;
+	font-size: 14px;
+	color: #fff;
+}
+
+.order__input {
+	width: 100%;
+	padding: 8px 12px;
+	border: none;
+	border-radius: 5px;
+}
+
+.order__input-comments {
+	height: 108px;
+}
+
+.order__radio {
+	@include ubuntu;
+	font-size: 14px;
+	color: #fff;
+}
