@@ -391,32 +391,34 @@
 						</div>
 					</div>
 					<div class="order__col">
-						<div class="order__row">
+						<div class="order__row order__row--bottom">
 							<label class="order__block">
 								<div class="order__title">Комментарий</div>
-								<input type="text" class="order__input order__input-comments">
+								<textarea class="order__input order__input-comments"></textarea>
 							</label>
 						</div>
-						<div class="order__row">
-							<label class="order__block order__radio">
-								<div class="order__radio-wrapper">
-									<input type="radio" name="cash" value="" class="order__radio--style">Потребуется сдача
-								</div>
-								<div class="order__radio-wrapper">
-									<input type="radio" name="cash" value="" class="order__radio--style">Оплата по карте
-								</div>
+						<div class="order__radio-wrapper">
+							<label class="order__radio">
+								<input type="radio" name="cash" value="" class="order__radio--style">
+								<span class="order__radio-fake"></span>
+								<span>Потребуется сдача</span>
+							</label>
+							<label class="order__radio">
+								<input type="radio" name="cash" value="" class="order__radio--style">
+								<span class="order__radio-fake"></span>
+								<span>Оплата по карте</span>
 							</label>
 						</div>
 						<div class="order__row">
 							<label class="order__block order__checkbox">
-								<div class="order__checkbox-wrappet">
-									<input type="checkbox" name="call" class="order__checkbox--style">Не перезванивать
-								</div>
+								<input type="checkbox" name="call" class="order__checkbox--style">
+								<span class="order__checkbox-fake"></span>
+								<span>Не перезванивать</span>
 							</label>
 						</div>
 						<div class="order__row order__btn">
 							<a href="#" class="btn">Заказать</a>
-							<a href="#" class="btn_clear">Очистить</a>	
+							<a href="#" class="btn__clear">Очистить</a>
 						</div>
 					</div>
 				</form>
@@ -445,12 +447,14 @@
 								</li>
 								<li class="socials__items">
 									<a href="#" class="socials__link">
-										<img src="./img/contacts/inst.png" alt="Инстаграмм" class="socials__img socials__items--inst">
+										<img src="./img/contacts/inst.png" alt="Инстаграмм"
+											class="socials__img socials__items--inst">
 									</a>
 								</li>
 								<li class="socials__items">
 									<a href="#" class="socials__link">
-										<img src="./img/contacts/twitter.png" alt="Твиттер" class="socials__img socials__items--tw">
+										<img src="./img/contacts/twitter.png" alt="Твиттер"
+											class="socials__img socials__items--tw">
 									</a>
 								</li>
 							</ul>
