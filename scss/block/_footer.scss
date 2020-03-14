@@ -38,16 +38,13 @@
 	font-size: 14px;
 	text-decoration: none;
 	line-height: 1;
+}
 
-	&:before {
-		content: "";
-		display: inline-block;
-		width: 12px;
-		height: 12px;
-		margin-right: 10px;
-		margin-top: 2px;
-		background: url('../img/contacts/phone.png') center center/cover no-repeat;
-	}
+.phone-icon {
+	width: 11px;
+	height: 11px;
+	viewBox: "0 0 11 11";
+	margin-right: 5px;
 }
 
 .footer__social {

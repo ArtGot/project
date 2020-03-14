@@ -13,10 +13,13 @@
 
 }
 
-.socials__link:hover {
+.socials__img {
+	width: 20px;
+	height: 20px;
+	fill: #fff;
+	opacity: .3;
 
-	.socials__img {
-	filter: invert(100%);
+	&:hover {
+		opacity: 1;
 	}
-	
 }

@@ -9,6 +9,18 @@
    margin-bottom: 20px;
 }
 
+.feature__img-elem {
+	width: 96.428px;
+	height: 89.246px;
+	viewBox: "0 0 96.428 89.246";
+
+	&--salad {
+	width: 82px;
+	height: 90px;
+	viewBox: 0 0 38 38.638;
+	}
+}
+
 .feature__title {
    @include lifehack;
    font-size: 24px;
@@ -22,3 +34,4 @@
    font-size: 14px;
    line-height: 1.7;
 }
+

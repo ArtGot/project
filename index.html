@@ -16,7 +16,9 @@
 			<div class="container hero__container">
 				<header class="header">
 					<a href="#" class="logo">
-						<img src="./img/icon/logo.png" alt="Логотип">
+						<svg class="logo-icon">
+							<use xlink:href="./img/icon/sprite.svg#logo"></use>
+						</svg>
 					</a>
 					<div class="header__buttons">
 						<nav class="menu">
@@ -49,6 +51,9 @@
 				</header>
 				<article class="hero__content">
 					<div class="hero__img">
+						<svg class="drops-icon">
+							<use xlink:href="./img/icon/sprite.svg#drops"></use>
+						</svg>
 						<img src="./img/hero/burg.png" class="hero__img-elem" alt="Бургер">
 					</div>
 					<div class="hero__text">
@@ -57,7 +62,10 @@
 					</div>
 				</article>
 				<button type="button" class="scroll-down">
-					<img src="./img/icon/arrow-scroll.png" alt="">
+					<!-- <img src="./img/icon/arrow-scroll.png" alt=""> -->
+					<svg class="arrow-icon">
+						<use xlink:href="./img/icon/sprite.svg#arrow-scroll"></use>
+					</svg>
 				</button>
 			</div>
 		</section>
@@ -68,7 +76,9 @@
 				<ul class="features__list">
 					<li class="features__item feature">
 						<div class="feature__img">
-							<img src="./img/icon/meat.png" alt="Мясо" class="feature__img-elem">
+							<svg class="feature__img-elem">
+								<use xlink:href="./img/icon/sprite.svg#meat"></use>
+							</svg>
 						</div>
 						<div class="feature__content">
 							<h3 class="feature__title">100% свежее мясо</h3>
@@ -80,7 +90,9 @@
 					</li>
 					<li class="features__item feature">
 						<div class="feature__img">
-							<img src="./img/icon/hand.png" alt="Рука" class="feature__img-elem">
+							<svg class="feature__img-elem">
+								<use xlink:href="./img/icon/sprite.svg#hand"></use>
+							</svg>
 						</div>
 						<div class="feature__content">
 							<h3 class="feature__title">Ручная сборка</h3>
@@ -92,7 +104,9 @@
 					</li>
 					<li class="features__item feature">
 						<div class="feature__img">
-							<img src="./img/icon/natural.png" alt="Салат" class="feature__img-elem">
+							<svg class="feature__img-elem--salad" viewBox="0 0 38 38.638">
+								<use xlink:href="./img/icon/sprite.svg#salad"></use>
+							</svg>
 						</div>
 						<div class="feature__content">
 							<h3 class="feature__title">Натуральные ингредиенты</h3>
@@ -431,30 +445,37 @@
 					<div class="footer__container">
 						<div class="footer__contacts">
 							<div class="footer__contacts-address">Санкт-Петербург, ул.Бабушкина, д.12/1, 15</div>
-							<a href="tel:88123771377" class="footer__contacts-phone">+7 (812) 377-13-77</a>
+							<a href="tel:88123771377" class="footer__contacts-phone">
+								<svg class="phone-icon">
+									<use xlink:href="./img/icon/sprite.svg#phone"></use>
+								</svg>
+								+7 (812) 377-13-77</a>
 						</div>
 						<div class="footer__social socials">
 							<ul class="socials__list">
 								<li class="socials__items">
 									<a href="#" class="socials__link">
-										<img src="./img/contacts/vk.png" alt="Вконтакте" class="socials__img socials__items--vk">
+										<svg class="socials__img" viewBox="0 0 36.663 36.664">
+											<use xlink:href="./img/icon/sprite.svg#vk"></use>
+										</svg>
 									</a>
 								</li>
 								<li class="socials__items">
 									<a href="#" class="socials__link">
-										<img src="./img/contacts/fb.png" alt="Фэйсбук" class="socials__img socials__items--fb">
+										<svg class="socials__img" viewBox="0 0 36.663 36.664">
+											<use xlink:href="./img/icon/sprite.svg#fb"></use>
 									</a>
 								</li>
 								<li class="socials__items">
 									<a href="#" class="socials__link">
-										<img src="./img/contacts/inst.png" alt="Инстаграмм"
-											class="socials__img socials__items--inst">
+										<svg class="socials__img" viewBox="0 0 36.663 36.664">
+											<use xlink:href="./img/icon/sprite.svg#inst"></use>
 									</a>
 								</li>
 								<li class="socials__items">
 									<a href="#" class="socials__link">
-										<img src="./img/contacts/twitter.png" alt="Твиттер"
-											class="socials__img socials__items--tw">
+										<svg class="socials__img" viewBox="0 0 36.663 36.664">
+											<use xlink:href="./img/icon/sprite.svg#twitter"></use>
 									</a>
 								</li>
 							</ul>

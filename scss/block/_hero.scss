@@ -1,7 +1,8 @@
 .hero {
    background: url('../img/hero/hero-bg.png') center center / cover no-repeat;
    color: #fff;
-   padding-top: 12px;
+	padding-top: 12px;
+	position: relative;
 }
 
 .hero__container {
@@ -17,7 +18,8 @@
 }
 
 .hero__img {
-   width: 70%;
+	width: 70%;
+	position: relative;
 }
 
 .hero__desc {
@@ -29,4 +31,13 @@
 .hero__text {
    height: 50%;
    padding-top: 96px;
+}
+
+.drops-icon {
+	position: absolute;
+	top: 65px;
+	left: -35px;
+	width: 450.527px;
+	height: 241.369px;
+	viewBox: 0 0 450.527 241.369;
 }

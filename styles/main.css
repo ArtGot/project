@@ -480,6 +480,7 @@ a {
   background: url("../img/hero/hero-bg.png") center center/cover no-repeat;
   color: #fff;
   padding-top: 12px;
+  position: relative;
 }
 
 .hero__container {
@@ -507,6 +508,7 @@ a {
 
 .hero__img {
   width: 70%;
+  position: relative;
 }
 
 .hero__desc {
@@ -518,6 +520,21 @@ a {
 .hero__text {
   height: 50%;
   padding-top: 96px;
+}
+
+.drops-icon {
+  position: absolute;
+  top: 65px;
+  left: -35px;
+  width: 450.527px;
+  height: 241.369px;
+  viewBox: 0 0 450.527 241.369;
+}
+
+.logo-icon {
+  width: 98.265px;
+  height: 74.317px;
+  viewBox: 0 0 98.265 74.317;
 }
 
 .header {
@@ -614,6 +631,12 @@ a {
           transform: translateX(-50px);
 }
 
+.arrow-icon {
+  fill: #fff;
+  width: 28.685px;
+  height: 14.479px;
+}
+
 .features {
   background: url("../img/features/features-bg.png") center center/cover no-repeat;
 }
@@ -646,6 +669,18 @@ a {
       -ms-flex-pack: center;
           justify-content: center;
   margin-bottom: 20px;
+}
+
+.feature__img-elem {
+  width: 96.428px;
+  height: 89.246px;
+  viewBox: "0 0 96.428 89.246";
+}
+
+.feature__img-elem--salad {
+  width: 82px;
+  height: 90px;
+  viewBox: 0 0 38 38.638;
 }
 
 .feature__title {
@@ -983,14 +1018,11 @@ a {
   line-height: 1;
 }
 
-.footer__contacts-phone:before {
-  content: "";
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  margin-right: 10px;
-  margin-top: 2px;
-  background: url("../img/contacts/phone.png") center center/cover no-repeat;
+.phone-icon {
+  width: 11px;
+  height: 11px;
+  viewBox: "0 0 11 11";
+  margin-right: 5px;
 }
 
 .footer__social {
@@ -1018,9 +1050,15 @@ a {
   margin-right: 0;
 }
 
-.socials__link:hover .socials__img {
-  -webkit-filter: invert(100%);
-          filter: invert(100%);
+.socials__img {
+  width: 20px;
+  height: 20px;
+  fill: #fff;
+  opacity: .3;
+}
+
+.socials__img:hover {
+  opacity: 1;
 }
 
 .order-section {
