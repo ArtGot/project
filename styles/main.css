@@ -1072,4 +1072,42 @@ a {
   font-family: 'Ubuntu', Helvetica, sans-serif;
   font-size: 14px;
   color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.order__radio-wrapper {
+  margin-right: 20px;
+}
+
+.order__radio-wrapper:last-child {
+  margin-right: 0;
+}
+
+.order__radio--style {
+  margin-right: 10px;
+}
+
+.order__checkbox {
+  font-family: 'Ubuntu', Helvetica, sans-serif;
+  font-size: 14px;
+  color: #fff;
+}
+
+.order__checkbox--style {
+  margin-right: 10px;
+}
+
+.order__btn {
+  color: #fff;
+  margin-bottom: 0;
+  line-height: 1;
+}
+
+.btn_clear {
+  font-weight: 300;
+  text-decoration: none;
+  padding: 7px 15px 1px;
 }

@@ -399,14 +399,24 @@
 						</div>
 						<div class="order__row">
 							<label class="order__block order__radio">
-								<input type="radio" name="cash" value="" class="order__radio--style">Потребуется сдача
-								<input type="radio" name="cash" value="" class="order__radio--style">Оплата по карте
+								<div class="order__radio-wrapper">
+									<input type="radio" name="cash" value="" class="order__radio--style">Потребуется сдача
+								</div>
+								<div class="order__radio-wrapper">
+									<input type="radio" name="cash" value="" class="order__radio--style">Оплата по карте
+								</div>
 							</label>
 						</div>
 						<div class="order__row">
-							<label class="order__block">
-								<input type="checkbox" name="call" class="order__input">Не перезванивать
+							<label class="order__block order__checkbox">
+								<div class="order__checkbox-wrappet">
+									<input type="checkbox" name="call" class="order__checkbox--style">Не перезванивать
+								</div>
 							</label>
+						</div>
+						<div class="order__row order__btn">
+							<a href="#" class="btn">Заказать</a>
+							<a href="#" class="btn_clear">Очистить</a>	
 						</div>
 					</div>
 				</form>
