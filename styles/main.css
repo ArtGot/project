@@ -888,7 +888,7 @@ a {
 .carte__content {
   position: absolute;
   top: 0;
-  left: 50%;
+  left: 0;
   right: 0;
   bottom: 0;
 }
@@ -896,7 +896,6 @@ a {
 .carte__container {
   position: absolute;
   top: 0;
-  left: 0;
   right: 0;
   bottom: 0;
 }
@@ -906,13 +905,22 @@ a {
   display: -ms-flexbox;
   display: flex;
   height: 100%;
-  widht: 100%;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .carte__item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.carte__item--activ {
+  width: 33.3%;
 }
 
 .carte__item--activ .carte__text {
