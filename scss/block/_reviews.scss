@@ -13,4 +13,9 @@
    background: black;
    height: 50%;
    width: 25%;
+
+   @include tablet {
+      height: 25%;
+      width: 50%;
+   }
 }

@@ -1,10 +1,23 @@
 .order {
    display: flex;
+
+   @include tablet {
+      flex-direction: column;
+      padding: 0;
+   }
+
+   @include phones {
+      padding: 0 1%;
+   }
 }
 
 .order__row {
    margin-bottom: rem(14px);
    display: flex;
+
+   @include tablet {
+      margin-bottom: rem(16px);
+   }
 }
 
 .order__col {
@@ -14,18 +27,27 @@
    &:last-child {
       margin-right: 0;
    }
+
+   @include tablet {
+      margin-right: 0;
+      padding: 0 2%;
+   }
+
+   @include phones {
+      padding: 0;
+   }
 }
 
 .order__block {
    flex: 1;
-	margin-right: rem(20px);
+   margin-right: rem(20px);
 
    &:last-child {
       margin-right: 0;
    }
 
    :focus {
-   	border: rem(2px) $yellow solid;
+      border: rem(2px) $yellow solid;
    }
 }
 
@@ -34,6 +56,10 @@
    @include ubuntu;
    font-size: rem(14px);
    color: #fff;
+
+   @include phones {
+      font-size: rem(16px);
+   }
 }
 
 .order__input {
@@ -44,110 +70,155 @@
 }
 
 .order__input-comments {
-	height: rem(114px);
-	resize: none;
+   height: rem(114px);
+   resize: none;
 }
 
 .order__row--bottom {
-	margin-bottom: rem(9px);
+   margin-bottom: rem(9px);
+
+   @include tablet {
+      margin-bottom: rem(20px);
+	}
+	
+	@include phones {
+      margin-bottom: rem(40px);
+   }
 }
 
 .order__radio {
    @include ubuntu;
    font-size: rem(14px);
    color: #fff;
-	margin-bottom: rem(10px);
-	display: flex;
-	align-items: center;
+   margin-bottom: rem(10px);
+   display: flex;
+   align-items: center;
 	margin-right: rem(20px);
+	
+	@include phones {
+		font-size: rem(16px);
+   }
 
-	&:last-child {
-		margin-right: 0;
-	}
+   &:last-child {
+      margin-right: 0;
+   }
 }
 
 .order__radio-wrapper {
-	display: flex;
-	justify-content: flex-start;
-	margin-bottom: rem(16px);
+   display: flex;
+   justify-content: flex-start;
+   margin-bottom: rem(16px);
+
+   @include phones {
+		flex-wrap: wrap;
+		justify-content: center;
+		margin-bottom: rem(30px);
+
+   }
 }
 
 .order__radio--style {
-	display: none;
+   display: none;
 
-	&:checked + .order__radio-fake:before {
-		opacity: 1;
-	}
+   &:checked+.order__radio-fake:before {
+      opacity: 1;
+   }
 }
 
 .order__radio-fake {
-	display: block;
-	height: rem(15px);
-	width: rem(15px);
-	border: none;
-	border-radius: 50%;
-	margin-right: rem(10px);
-	position: relative;
-	background-color: #fff;
+   display: block;
+   height: rem(15px);
+   width: rem(15px);
+   border: none;
+   border-radius: 50%;
+   margin-right: rem(10px);
+   position: relative;
+   background-color: #fff;
 }
 
 .order__radio-fake:before {
-	content: "";
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	background-color: $red;
-	height: rem(7px);
-	width: rem(7px);
-	display: block;
-	border-radius: 50%;
-	opacity: 0;
+   content: "";
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   background-color: $red;
+   height: rem(7px);
+   width: rem(7px);
+   display: block;
+   border-radius: 50%;
+   opacity: 0;
 }
 
 .order__checkbox {
    @include ubuntu;
    font-size: rem(14px);
-	color: #fff;
-	display: flex;
-	align-items: center;
-	margin-bottom: rem(6px);
+   color: #fff;
+   display: flex;
+   align-items: center;
+   margin-bottom: rem(6px);
+
+   @include tablet {
+      margin-bottom: rem(25px);
+	}
+	
+	@include phones {
+		justify-content: center;
+		font-size: rem(16px);
+   }
 }
 
 .order__checkbox--style {
-	display: none;
+   display: none;
 
-	&:checked + .order__checkbox-fake:before {
-		opacity: 1;
-	}
+   &:checked+.order__checkbox-fake:before {
+      opacity: 1;
+   }
 }
 
 .order__checkbox-fake {
-	display: block;
-	height: rem(15px);
-	width: rem(15px);
-	border: none;
-	margin-right: rem(10px);
-	position: relative;
-	background-color: #fff;
+   display: block;
+   height: rem(15px);
+   width: rem(15px);
+   border: none;
+   margin-right: rem(10px);
+   position: relative;
+   background-color: #fff;
 }
 
 .order__checkbox-fake:before {
-	content: "";
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	background: url('../img/forms/v.png') center center/cover no-repeat;
-	width: rem(11px);
-	height: rem(9px);
-	display: block;
-	opacity: 0;
+   content: "";
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   background: url('../img/forms/v.png') center center/cover no-repeat;
+   width: rem(11px);
+   height: rem(9px);
+   display: block;
+   opacity: 0;
 }
 
 .order__btn {
    color: #fff;
    margin-bottom: 0;
 	line-height: 1;
+	
+	@include phones {
+		justify-content: center;
+   }
 }
 
+.order__block--phones--margin {
+
+   @include phones {
+      margin-right: 0;
+   }
+}
+
+.order__block--phones--none {
+
+   @include phones {
+      display: none;
+   }
+}

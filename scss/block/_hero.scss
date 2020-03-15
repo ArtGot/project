@@ -9,35 +9,47 @@
    display: flex;
    flex-direction: column;
 	height: 100%;
-	align-items: center;
 }
 
 .hero__content {
    display: flex;
    align-items: center;
-   flex: .8;
+	flex: .8;
+	
+	@include tablet {
+		flex-direction: column;
+	}
 }
 
 .hero__img {
 	width: 70%;
 	position: relative;
+
+	@include phones {
+		width: 80%;
+	}
 }
 
 .hero__desc {
    font-size: rem(65px);
    @include lifehack();
-   line-height: 1;
+	line-height: 1;
+	
+	@include phones {
+		font-size: rem(54px);
+	}
 }
 
 .hero__text {
    height: 50%;
-   padding-top: rem(96px);
-}
+	padding-top: rem(96px);
+	
+	@include tablet {
+		padding: rem(30px) 6% 0;
+		text-align: center;
+	}
 
-// .drops-icon {
-// 	position: absolute;
-// 	top: rem(65px);
-// 	left: rem(-35px);
-// 	width: rem(450.527px);
-// 	height: rem(241.369px);
-// }
+	@include phones {
+		padding-top: rem(55px);
+	}
+}

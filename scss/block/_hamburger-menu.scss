@@ -6,7 +6,7 @@
 	margin-left: rem (30px);
 	display: none;
 
-	@include tablets {
+	@include tablet {
 		display: flex;
 	}
 }
@@ -21,6 +21,15 @@
 
 	&:before, &:after {
 		content: "";
+		display: block;
+		position: absolute;
+	}
 
+	&:before {
+		top: 0;
+	}
+
+	&:after {
+		bottom: 0;
 	}
 }

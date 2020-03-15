@@ -2,6 +2,10 @@
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
+
+	@include phones {
+		justify-content: center;
+	}
 }
 
 .socials__items {

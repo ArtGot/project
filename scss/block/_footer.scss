@@ -1,12 +1,11 @@
 .footer {
-	background: $black;
+	background: url('../img/contacts/footer-bg.png') center center/cover no-repeat;
 	position: absolute;
 	left: 0;
 	right: 0;
 	bottom: 0;
-	// top: 90%;
 	width: 100%;
-	// height: 100%;
+	height: auto;
 }
 
 .footer__container {
@@ -18,17 +17,34 @@
 	align-items: center;
 	color: #fff;
 	padding: rem(10px);
+
+	@include phones {
+		flex-direction: column;
+		justify-content: center;
+		}
 }
 
 .footer__contacts {
 	width: 50%;
-	// height: 100%;
 	text-align: left;
+
+	@include tablet {
+		width: 90%;
+	}
+
+	@include phones {
+		text-align: center;
+	}
 }
 
 .footer__contacts-address {
 	font-size: rem(14px);
 	margin-bottom: rem(10px);
+
+	@include phones {
+		font-size: rem(16px);
+		margin-bottom: rem(15px);
+	}
 }
 
 .footer__contacts-phone {
@@ -38,6 +54,10 @@
 	font-size: rem(14px);
 	text-decoration: none;
 	line-height: 1;
+
+	@include phones {
+		font-size: rem(16px);
+	}
 }
 
 .phone-icon {
@@ -50,4 +70,9 @@
 	width: 50%;
 	// height: 100%;
 	text-align: right;
+
+	@include phones {
+		margin: 2% 0;
+	}
+
 }

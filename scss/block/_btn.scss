@@ -6,19 +6,34 @@
    font-size: rem(13px);
    font-weight: 500;
    display: inline-flex;
-	padding: rem(10px) rem(15px);
-	
-	
-}
+   padding: rem(10px) rem(15px);
 
-.btn__clear {
-   font-weight: 300;
-   text-decoration: none;
-	padding: rem(7px) rem(15px) rem(1px);
-	
-	&:hover {
-		background: $red;
-		border-radius: rem(5px);
-		font-weight: 500;
+	@include phones {
+		margin-right: rem(33px);
+		padding: rem(10px) rem(20px);
+	}
+
+   &--margin--tablet {
+      @include tablet {
+         margin-right: rem(33px);
+      }
+	}
+
+	&--review {
+		@include phones {
+			margin-right: 0;
+		}
 	}
 }
+
+   .btn__clear {
+      font-weight: 300;
+      text-decoration: none;
+      padding: rem(7px) rem(15px) rem(1px);
+
+      &:hover {
+         background: $red;
+         border-radius: rem(5px);
+         font-weight: 500;
+      }
+   }

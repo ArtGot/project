@@ -29,10 +29,13 @@
 .carte__item {
 	display: flex;
 	justify-content: flex-end;
+	padding: 0;
+	margin: 0;
 	
 	&--activ {
 
 		width: 33.3%;
+
 		.carte__text {
 			width: 100%;
 			padding: rem(40px) 10%;
@@ -66,9 +69,8 @@
    width: 100%;
    background: rgba(0, 0, 0, .5);
    display: flex;
-   justify-content: center;
 	align-items: center;
-	padding: rem(20px) 2%;
+	padding: rem(60px) 2%;
 
 }
 
@@ -76,7 +78,7 @@
    @include ubuntu;
    font-size: rem(14px);
    color: #fff;
-   background: rgba(0, 0, 0, .5);
+   background: rgba(0, 0, 0, .8);
    padding: 0;
 	width: 0;
 	overflow: hidden;

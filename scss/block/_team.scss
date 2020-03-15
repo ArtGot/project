@@ -12,6 +12,11 @@
    background: $black;
    opacity: .93;
    padding: rem(113px) 8%;
+
+   @include tablet {
+      left: 0;
+      text-align: center;
+   }
 }
 
 .team__list {
@@ -23,7 +28,11 @@
 }
 
 .team__item {
-   margin-bottom: rem(35px);
+   margin-bottom: rem(17px);
+
+   @include tablet {
+      margin-bottom: rem(20px);
+   }
 
    &:last-child {
       margin-bottom: 0;
@@ -32,8 +41,8 @@
 
 .team__item-name {
    display: flex;
-	line-height: 1;
-	margin-bottom: rem(17px);
+   line-height: 1;
+   margin-bottom: rem(17px);
 
    &::before {
       content: "";
@@ -43,6 +52,15 @@
       border-right: rem(5px) solid transparent;
       margin-right: rem(10px);
       margin-top: rem(7px);
+
+      @include tablet {
+         margin-top: rem(10px);
+      }
+   }
+
+   @include tablet {
+      justify-content: center;
+      font-size: rem(25px);
    }
 }
 
@@ -51,9 +69,20 @@
    min-width: rem(100px);
    height: rem(100px);
    border-radius: 50%;
-	overflow: hidden;
-	margin-left: rem(17px);
-	margin-right: rem(21px);
+   overflow: hidden;
+   margin-left: rem(17px);
+   margin-right: rem(21px);
+
+   @include tablet {
+      width: rem(110px);
+      min-width: rem(110px);
+      height: rem(110px);
+      margin-bottom: rem(15px);
+   }
+
+   @include phones {
+      margin-bottom: rem(20px);
+   }
 
    &__img {
       width: 100%;
@@ -70,13 +99,35 @@
    overflow: hidden;
    transition: .3s;
 
+   @include tablet {
+      padding: 0 20%;
+      margin-bottom: rem(40px);
+	}
+	
+	@include phones {
+		padding: 0 8%;
+		font-size: rem(16px);
+   }
+
    h4 {
-		font-weight: bold;
-		margin-bottom: rem(20px);
+      font-weight: bold;
+      margin-bottom: rem(15px);
+   }
+
+   @include tablet {
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: rem(25px);
+	}
+	
+	@include phones {
+      margin-bottom: rem(45px);
    }
 }
 
 .team__item--activ {
+
+   margin-bottom: rem(40px);
 
    .team__item-content {
       height: 100%;
@@ -92,6 +143,10 @@
          border-bottom: rem(5px) solid $yellow;
          margin-top: 0;
          margin-bottom: rem(2px);
+
+         @include tablet {
+            margin-bottom: rem(8px);
+         }
       }
 
    }
