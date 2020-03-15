@@ -3,12 +3,12 @@
 }
 
 .order__row {
-   margin-bottom: 14px;
+   margin-bottom: rem(14px);
    display: flex;
 }
 
 .order__col {
-   margin-right: 20px;
+   margin-right: rem(20px);
    flex: 1;
 
    &:last-child {
@@ -18,48 +18,48 @@
 
 .order__block {
    flex: 1;
-	margin-right: 20px;
+	margin-right: rem(20px);
 
    &:last-child {
       margin-right: 0;
    }
 
    :focus {
-   	border: 2px $yellow solid;
+   	border: rem(2px) $yellow solid;
    }
 }
 
 .order__title {
-   margin-bottom: 5px;
+   margin-bottom: rem(5px);
    @include ubuntu;
-   font-size: 14px;
+   font-size: rem(14px);
    color: #fff;
 }
 
 .order__input {
    width: 100%;
-   padding: 8px 12px;
-   border-radius: 5px;
+   padding: rem(8px) rem(12px);
+   border-radius: rem(5px);
    outline: none;
 }
 
 .order__input-comments {
-	height: 114px;
+	height: rem(114px);
 	resize: none;
 }
 
 .order__row--bottom {
-	margin-bottom: 9px;
+	margin-bottom: rem(9px);
 }
 
 .order__radio {
    @include ubuntu;
-   font-size: 14px;
+   font-size: rem(14px);
    color: #fff;
-	margin-bottom: 10px;
+	margin-bottom: rem(10px);
 	display: flex;
 	align-items: center;
-	margin-right: 20px;
+	margin-right: rem(20px);
 
 	&:last-child {
 		margin-right: 0;
@@ -69,7 +69,7 @@
 .order__radio-wrapper {
 	display: flex;
 	justify-content: flex-start;
-	margin-bottom: 16px;
+	margin-bottom: rem(16px);
 }
 
 .order__radio--style {
@@ -82,11 +82,11 @@
 
 .order__radio-fake {
 	display: block;
-	height: 15px;
-	width: 15px;
+	height: rem(15px);
+	width: rem(15px);
 	border: none;
 	border-radius: 50%;
-	margin-right: 10px;
+	margin-right: rem(10px);
 	position: relative;
 	background-color: #fff;
 }
@@ -98,8 +98,8 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 	background-color: $red;
-	height: 7px;
-	width: 7px;
+	height: rem(7px);
+	width: rem(7px);
 	display: block;
 	border-radius: 50%;
 	opacity: 0;
@@ -107,11 +107,11 @@
 
 .order__checkbox {
    @include ubuntu;
-   font-size: 14px;
+   font-size: rem(14px);
 	color: #fff;
 	display: flex;
 	align-items: center;
-	margin-bottom: 6px;
+	margin-bottom: rem(6px);
 }
 
 .order__checkbox--style {
@@ -124,10 +124,10 @@
 
 .order__checkbox-fake {
 	display: block;
-	height: 15px;
-	width: 15px;
+	height: rem(15px);
+	width: rem(15px);
 	border: none;
-	margin-right: 10px;
+	margin-right: rem(10px);
 	position: relative;
 	background-color: #fff;
 }
@@ -139,8 +139,8 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 	background: url('../img/forms/v.png') center center/cover no-repeat;
-	width: 11px;
-	height: 9px;
+	width: rem(11px);
+	height: rem(9px);
 	display: block;
 	opacity: 0;
 }

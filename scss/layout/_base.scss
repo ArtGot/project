@@ -9,7 +9,7 @@ body {
 
 body {
    @include ubuntu;
-   font-size: 16px;
+   font-size: rem(16px);
    line-height: 1.42;
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
@@ -58,11 +58,14 @@ a {
 
 .wrapper {
    overflow: hidden;
-   position: relative;
+	position: relative;
+	width: 100%;
+	min-height: 100%;
 
 }
 
 .container {
-   width: 940px;
+	max-width: rem(940px);
+	width: 95%;
    margin: 0 auto;
 }

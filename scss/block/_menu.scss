@@ -1,4 +1,13 @@
-$itemMargin: 15px;
+$itemMargin: rem(15px);
+
+.menu {
+	flex: 1;
+
+	@include tablet {
+		display: none;
+	}
+}
+
 
 .menu__list {
    display: flex;
@@ -13,8 +22,8 @@ $itemMargin: 15px;
    &:before {
       content: "";
       display: block;
-      width: 4px;
-      height: 4px;
+      width: rem(4px);
+      height: rem(4px);
       border-radius: 50%;
       background: currentColor;
    }
@@ -31,6 +40,6 @@ $itemMargin: 15px;
    text-decoration: none;
    text-transform: uppercase;
    margin-left: $itemMargin;
-   font-size: 13px;
+   font-size: rem(13px);
    font-weight: 500;
 }

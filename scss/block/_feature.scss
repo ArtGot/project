@@ -6,32 +6,32 @@
    display: flex;
    align-items: center;
    justify-content: center;
-   margin-bottom: 20px;
+   margin-bottom: rem(20px);
 }
 
 .feature__img-elem {
-	width: 96.428px;
-	height: 89.246px;
+	width: rem(96.428px);
+	height: rem(89.246px);
 	viewBox: "0 0 96.428 89.246";
 
 	&--salad {
-	width: 82px;
-	height: 90px;
+	width: rem(82px);
+	height: rem(90px);
 	viewBox: 0 0 38 38.638;
 	}
 }
 
 .feature__title {
    @include lifehack;
-   font-size: 24px;
-   margin-bottom: 20px;
+   font-size: rem(24px);
+   margin-bottom: rem(20px);
 }
 
 .feature__text {
    opacity: 0.8;
    color: $black;
    @include ubuntu;
-   font-size: 14px;
+   font-size: rem(14px);
    line-height: 1.7;
 }
 

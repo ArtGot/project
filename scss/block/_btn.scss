@@ -2,11 +2,11 @@
    background: $red;
    text-decoration: none;
    text-transform: uppercase;
-   border-radius: 5px;
-   font-size: 13px;
+   border-radius: rem(5px);
+   font-size: rem(13px);
    font-weight: 500;
    display: inline-flex;
-	padding: 10px 15px;
+	padding: rem(10px) rem(15px);
 	
 	
 }
@@ -14,11 +14,11 @@
 .btn__clear {
    font-weight: 300;
    text-decoration: none;
-	padding: 7px 15px 1px;
+	padding: rem(7px) rem(15px) rem(1px);
 	
 	&:hover {
 		background: $red;
-		border-radius: 5px;
+		border-radius: rem(5px);
 		font-weight: 500;
 	}
 }

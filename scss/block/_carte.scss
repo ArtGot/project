@@ -35,15 +35,15 @@
 		width: 33.3%;
 		.carte__text {
 			width: 100%;
-			padding: 40px 10%;
+			padding: rem(40px) 10%;
 		}
 	}
 }
 
 .carte__title {
    @include gagalin;
-   font-size: 40px;
-   letter-spacing: 1px;
+   font-size: rem(40px);
+   letter-spacing: rem(1px);
    color: #fff;
    writing-mode: vertical-lr;
    transform: rotate(180deg);
@@ -68,13 +68,13 @@
    display: flex;
    justify-content: center;
 	align-items: center;
-	padding: 20px 2%;
+	padding: rem(20px) 2%;
 
 }
 
 .carte__text {
    @include ubuntu;
-   font-size: 14px;
+   font-size: rem(14px);
    color: #fff;
    background: rgba(0, 0, 0, .5);
    padding: 0;
