@@ -6,7 +6,8 @@
    font-size: rem(13px);
    font-weight: 500;
    display: inline-flex;
-   padding: rem(10px) rem(15px);
+	padding: rem(10px) rem(15px);
+	color: #fff;
 
 	@include phones {
 		margin-right: rem(33px);
@@ -29,7 +30,8 @@
    .btn__clear {
       font-weight: 300;
       text-decoration: none;
-      padding: rem(7px) rem(15px) rem(1px);
+		padding: 0 rem(15px) 0;
+		color: #fff;
 
       &:hover {
          background: $red;

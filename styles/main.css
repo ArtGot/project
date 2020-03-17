@@ -712,6 +712,7 @@ a {
   display: -ms-inline-flexbox;
   display: inline-flex;
   padding: 0.625rem 0.9375rem;
+  color: #fff;
 }
 
 @media screen and (max-width: 480px) {
@@ -736,7 +737,8 @@ a {
 .btn__clear {
   font-weight: 300;
   text-decoration: none;
-  padding: 0.4375rem 0.9375rem 0.0625rem;
+  padding: 0 0.9375rem 0;
+  color: #fff;
 }
 
 .btn__clear:hover {
@@ -1727,9 +1729,7 @@ a {
 }
 
 .order__btn {
-  color: #fff;
   margin-bottom: 0;
-  line-height: 1;
 }
 
 @media screen and (max-width: 480px) {
