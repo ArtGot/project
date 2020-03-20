@@ -33,3 +33,43 @@
 		bottom: 0;
 	}
 }
+
+.hamburger-menu {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: $black;
+	padding: 2%;
+	display: none;
+	justify-content: space-between;
+}
+
+.hamburger-menu__list {
+	color: #fff;
+	text-align: center;
+	padding-top: rem(120px);
+}
+
+.hamburger-menu__link {
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.hamburger-menu__item {
+	&:after {
+		content: "";
+		display: block;
+		text-align: center;
+		background-color: #fff;
+		width: 4px;
+		height: 4px;
+		border-radius: 50%;
+		margin: rem(20px) auto;
+	}
+
+	&:last-child::after {
+		display: none;
+	}
+}
