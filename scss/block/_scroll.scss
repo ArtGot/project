@@ -1,0 +1,36 @@
+.scroll__down {
+   position: absolute;
+   bottom: rem(40px);
+   left: 50%;
+   transform: translateX(-50px);
+}
+
+.scroll__left {
+	transform: rotate(90deg);
+}
+
+.scroll__right {
+	transform: rotate(270deg);
+}
+
+.scroll__left-link, .scroll__right-link {
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.scroll__left-link {
+	margin-right: rem(10px);
+	padding-left: 1%;
+}
+
+.scroll__right-link {
+	margin-left: rem(10px);
+	padding-right: 1%;
+}
+
+.arrow-icon {
+	fill: #fff;
+	width: rem(28.685px);
+	height: rem(14.479px);
+}

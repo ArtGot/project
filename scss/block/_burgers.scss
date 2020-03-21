@@ -1,0 +1,147 @@
+.burgers {
+   background: linear-gradient(0deg, #f9b43b, #eb8c38, #f9b43b);
+   justify-content: space-between;
+   align-items: center;
+   height: 100%;
+   flex-direction: row;
+   display: flex;
+   height: 100vh;
+}
+
+.burgers__center {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   flex: 1;
+	height: 80%;
+	
+	@include tablet {
+		flex-direction: column;
+	}
+
+	@include phones {
+		
+	}
+}
+
+.burger-icon {
+   width: rem(45.748px);
+   height: rem(44.625px);
+}
+
+.kkal-icon {
+   width: rem(60px);
+   height: rem(60.178px);
+}
+
+
+.burger__img {
+   flex: 1.2;
+   position: relative;
+   @include gagalin;
+   font-size: rem(14px);
+	color: #fff;
+	display: flex;
+	justify-content: center;
+	padding: 10% 0;
+
+	@include tablet {
+		padding: 15% 0 5%;
+		flex: 0;
+	}
+
+	@include phones {
+		padding-top: 30%;
+	}
+}
+
+.burgers__content {
+	flex: 1;
+	
+	@include tablet {
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
+.burgers__composition {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: rem(90px);
+   height: rem(90px);
+   background-color: $orange;
+   border-radius: 5px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+
+.burgers__kkal {
+	opacity: .5;
+	position: absolute;
+   bottom: 0;
+   left: 0;
+   width: rem(90px);
+	height: rem(90px);
+	display: flex;
+   justify-content: center;
+   align-items: center;
+	flex-direction: column;
+	
+	& span {
+		position: absolute;
+	}
+
+	@include tablet {
+		top: 0;
+		right: 0;
+		left: 84%;
+	}
+}
+
+.burgers__text {
+	margin-top: rem(56px);
+	margin-bottom: rem(36px);
+	color: #fff;
+	font-size: rem(14px);
+	
+	@include tablet {
+		margin-top: rem(20px);
+	}
+
+	@include phones {
+		font-size: rem(16px);
+	}
+
+}
+
+.burgers__price {
+	@include gagalin;
+	font-size: rem(30px);
+	color: $red;
+	line-height: 1;
+	display: flex;
+	align-items: flex-end;
+	flex-wrap: wrap;
+		
+	& a {
+		@include ubuntu;
+		height: auto;
+	}
+}
+
+.burgers__price-number {
+	font-size: rem(70px);
+
+	@include phones {
+		font-size: rem(50px);
+	}
+}
+
+.burgers__price-wrapper {
+	margin-right: rem(30px);
+}

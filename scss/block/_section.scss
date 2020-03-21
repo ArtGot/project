@@ -41,8 +41,16 @@
    }
 
    &--color--white {
-      color: #fff;
-   }
+		color: #fff;
+		
+	}
+	
+	&--color--white--pading {
+		
+		@include tablet {
+			padding: 0 7.7%;
+		}
+	}
 
    &--carte {
       margin-top: 10%;
