@@ -807,6 +807,12 @@ a {
           justify-content: space-between;
 }
 
+.hamburger-menu--activ {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .hamburger-menu__list {
   color: #fff;
   text-align: center;
