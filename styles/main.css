@@ -1355,7 +1355,9 @@ a {
 }
 
 .carte__item--activ {
-  width: 33.3%;
+  -webkit-box-flex: 0.45;
+      -ms-flex: 0.45;
+          flex: 0.45;
 }
 
 .carte__item--activ .carte__text {
