@@ -3,14 +3,14 @@
 document.getElementById("hamburger-menu-link").onclick = function() {
 	openBurgerMenu()
 };
+
+document.getElementById("hamburger-menu__img-link").onclick = function() {
+	openBurgerMenu()
+};
  
 function openBurgerMenu() {
 	document.getElementById("hamburger-menu").classList.toggle("hamburger-menu--activ");
 }
-
-document.getElementById("hamburger-menu__img-link").onclick = function() {
-	open()
-};
 
 // реализация списка "Команда"
 
