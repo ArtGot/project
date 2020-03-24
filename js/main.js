@@ -17,18 +17,33 @@ function openBurgerMenu() {
 document.getElementById("team__item--1").onclick = function() {
 	openTeam("team__item--1");
 
+	document.getElementById("team__item--2").classList.remove("team__item--activ");
+	document.getElementById("team__item--3").classList.remove("team__item--activ");
+	document.getElementById("team__item--4").classList.remove("team__item--activ");
 };
 
 document.getElementById("team__item--2").onclick = function() {
-	openTeam("team__item--2")
+	openTeam("team__item--2");
+
+	document.getElementById("team__item--1").classList.remove("team__item--activ");
+	document.getElementById("team__item--3").classList.remove("team__item--activ");
+	document.getElementById("team__item--4").classList.remove("team__item--activ");
 };
 
 document.getElementById("team__item--3").onclick = function() {
-	openTeam("team__item--3")
+	openTeam("team__item--3");
+
+	document.getElementById("team__item--1").classList.remove("team__item--activ");
+	document.getElementById("team__item--2").classList.remove("team__item--activ");
+	document.getElementById("team__item--4").classList.remove("team__item--activ");
 };
 
 document.getElementById("team__item--4").onclick = function() {
-	openTeam("team__item--4")
+	openTeam("team__item--4");
+
+	document.getElementById("team__item--1").classList.remove("team__item--activ");
+	document.getElementById("team__item--2").classList.remove("team__item--activ");
+	document.getElementById("team__item--3").classList.remove("team__item--activ");
 };
 
 function openTeam(team) {
@@ -38,15 +53,24 @@ function openTeam(team) {
 // реализация списка "Меню"
 
 document.getElementById("carte__item--1").onclick = function() {
-	openCarte("carte__item--1")
+	openCarte("carte__item--1");
+
+	document.getElementById("carte__item--2").classList.remove("carte__item--activ");
+	document.getElementById("carte__item--3").classList.remove("carte__item--activ");
 };
 
 document.getElementById("carte__item--2").onclick = function() {
-	openCarte("carte__item--2")
+	openCarte("carte__item--2");
+
+	document.getElementById("carte__item--1").classList.remove("carte__item--activ");
+	document.getElementById("carte__item--3").classList.remove("carte__item--activ");
 };
 
 document.getElementById("carte__item--3").onclick = function() {
-	openCarte("carte__item--3")
+	openCarte("carte__item--3");
+
+	document.getElementById("carte__item--1").classList.remove("carte__item--activ");
+	document.getElementById("carte__item--2").classList.remove("carte__item--activ");
 };
 
 function openCarte(carte) {
