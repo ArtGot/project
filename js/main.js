@@ -30,29 +30,29 @@ function toogleClass(e) {
 		e.target.closest(".team__item").classList.add("team__item--activ");
 	} else {
 		e.target.closest(".team__item").classList.remove("team__item--activ");
-	}
-}
+	};
+};
 
 // реализация списка "Меню"
 
 const carteElem = document.querySelectorAll(".carte__item");
 
 for (let i = 0; i < carteElem.length; i++) {
-	carteElem[i].addEventListener("click", toogleClass);
+	carteElem[i].addEventListener("click", toogleClassCarte);
 };
 
-function toogleClass(e) {
-	e.preventDefault();
+function toogleClassCarte(ev) {
+	ev.preventDefault();
 
-	if (e.target.closest(".carte__item").classList.contains("carte__item--activ") === false) {
+	if (ev.target.closest(".carte__item").classList.contains("carte__item--activ") === false) {
 		for (let i = 0; i < carteElem.length; i++) {
 			carteElem[i].closest(".carte__item").classList.remove("carte__item--activ");
 		}
-		e.target.closest(".carte__item").classList.add("carte__item--activ");
-	} else {
-		e.target.closest(".carte__item").classList.remove("carte__item--activ");
-	}
-}
+		ev.target.closest(".carte__item").classList.add("carte__item--activ");
+	} 	else {
+		ev.target.closest(".carte__item").classList.remove("carte__item--activ");
+	};
+};
 
 // реализация Слайдера
 
@@ -82,8 +82,8 @@ function loop(direction, e) {
 const order = document.querySelector(".order");
 const sentButton = document.querySelector(".btn__submit");
 
-sentButton.addEventListener('click', function (e) {
-	e.preventDefault();
+sentButton.addEventListener('click', function (event) {
+	event.preventDefault();
 
 	if (validateForm(order)) {
 		const data = {
@@ -97,7 +97,7 @@ sentButton.addEventListener('click', function (e) {
 		xhr.responseType = 'json';
 		xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
 		xhr.send(JSON.stringify(data));
-		xhr.addEventListener('load', function(e) {
+		xhr.addEventListener('load', function() {
 			console.log(xhr.response);
 		});
 	};
