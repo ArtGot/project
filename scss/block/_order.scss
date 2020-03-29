@@ -220,3 +220,9 @@
       display: none;
    }
 }
+
+.error {
+	@include ubuntu;
+   font-size: rem(14px);
+   color: $red;
+}

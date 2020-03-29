@@ -96,8 +96,8 @@
    font-size: rem(14px);
    display: flex;
    height: 0;
-   overflow: hidden;
-   transition: .3s;
+	overflow: hidden;
+	transition: height 0.3s;
 
    @include tablet {
       padding: 0 20%;
@@ -125,12 +125,16 @@
    }
 }
 
+.team__item-link {
+	text-decoration: none;
+}
+
 .team__item--activ {
 
    margin-bottom: rem(40px);
 
    .team__item-content {
-      height: 100%;
+      height: auto;
    }
 
    .team__item-name {

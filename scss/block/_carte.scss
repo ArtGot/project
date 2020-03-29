@@ -1,7 +1,7 @@
 .carte {
    position: relative;
    background: url('../img/carte/carte-bg.png') center center/cover no-repeat;
-	justify-content: flex-start;
+   justify-content: flex-start;
 }
 
 .carte__content {
@@ -9,38 +9,54 @@
    top: 0;
    left: 0;
    right: 0;
-	bottom: 0;
+   bottom: 0;
+	font-size: 0;
+	letter-spacing: 0;
 }
 
 .carte__container {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: 0;
 
 }
 
 .carte__list {
-	display: flex;
-	height: 100%;
-	justify-content: flex-end;
+   display: flex;
+   height: 100%;
+   justify-content: flex-end;
+}
+
+.carte__text {
+   @include ubuntu;
+   font-size: rem(14px);
+   color: #fff;
+   background: rgba(0, 0, 0, .8);
+   padding: 0;
+   width: 0;
+   overflow: hidden;
 }
 
 .carte__item {
-	display: flex;
-	justify-content: flex-end;
-	padding: 0;
+   display: flex;
+   justify-content: flex-end;
+   padding: 0;
 	margin: 0;
-	
-	&--activ {
 
-		flex: 0.45;
+   &--activ {
 
-		.carte__text {
-			width: 100%;
-			padding: rem(40px) 10%;
-		}
-	}
+      flex: 0.45;
+
+      .carte__text {
+         width: 100%;
+         padding: rem(40px) 10%;
+      }
+
+      @include phones {
+         flex: 1;
+      }
+   }
 }
 
 .carte__title {
@@ -49,7 +65,8 @@
    letter-spacing: rem(1px);
    color: #fff;
    writing-mode: vertical-lr;
-   transform: rotate(180deg);
+	transform: rotate(180deg);
+	cursor: pointer;
 
    &--meat {
       background: url('./../img/carte/meat.png') center center/cover no-repeat;
@@ -69,17 +86,7 @@
    width: 100%;
    background: rgba(0, 0, 0, .5);
    display: flex;
-	align-items: center;
-	padding: rem(60px) 2%;
+   align-items: center;
+   padding: rem(60px) 2%;
 
-}
-
-.carte__text {
-   @include ubuntu;
-   font-size: rem(14px);
-   color: #fff;
-   background: rgba(0, 0, 0, .8);
-   padding: 0;
-	width: 0;
-	overflow: hidden;
 }

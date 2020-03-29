@@ -2,18 +2,33 @@
    background: linear-gradient(0deg, #f9b43b, #eb8c38, #f9b43b);
    justify-content: space-between;
    align-items: center;
-   height: 100%;
    flex-direction: row;
    display: flex;
-   height: 100vh;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+}
+
+.burger-container {
+	display: flex;
+	overflow: hidden;
+	justify-content: flex-start;
+	align-items: center;
+	margin: 0 3%;
+	overflow: hidden;
+}
+
+.burger__items {
+	display: flex;
+	position: relative;
+	justify-content: flex-start;
 }
 
 .burgers__center {
    display: flex;
-   justify-content: space-between;
+   justify-content: center;
    align-items: center;
-   flex: 1;
-	height: 80%;
+   flex: 0 0 100%;
 	
 	@include tablet {
 		flex-direction: column;
@@ -36,7 +51,7 @@
 
 
 .burger__img {
-   flex: 1.2;
+   flex: 1;
    position: relative;
    @include gagalin;
    font-size: rem(14px);

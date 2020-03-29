@@ -1,78 +1,144 @@
 // реализация бургер-меню
 
-document.getElementById("hamburger-menu-link").onclick = function() {
+document.getElementById("hamburger-menu-link").onclick = function () {
 	openBurgerMenu()
 };
 
-document.getElementById("hamburger-menu__img-link").onclick = function() {
+document.getElementById("hamburger-menu__img-link").onclick = function () {
 	openBurgerMenu()
 };
- 
+
 function openBurgerMenu() {
 	document.getElementById("hamburger-menu").classList.toggle("hamburger-menu--activ");
 }
 
 // реализация списка "Команда"
 
-document.getElementById("team__item--1").onclick = function() {
-	openTeam("team__item--1");
+const teamMembers = document.querySelectorAll(".team__item");
 
-	document.getElementById("team__item--2").classList.remove("team__item--activ");
-	document.getElementById("team__item--3").classList.remove("team__item--activ");
-	document.getElementById("team__item--4").classList.remove("team__item--activ");
+for (let i = 0; i < teamMembers.length; i++) {
+	teamMembers[i].addEventListener("click", toogleClass);
 };
 
-document.getElementById("team__item--2").onclick = function() {
-	openTeam("team__item--2");
+function toogleClass(e) {
+	e.preventDefault();
 
-	document.getElementById("team__item--1").classList.remove("team__item--activ");
-	document.getElementById("team__item--3").classList.remove("team__item--activ");
-	document.getElementById("team__item--4").classList.remove("team__item--activ");
-};
-
-document.getElementById("team__item--3").onclick = function() {
-	openTeam("team__item--3");
-
-	document.getElementById("team__item--1").classList.remove("team__item--activ");
-	document.getElementById("team__item--2").classList.remove("team__item--activ");
-	document.getElementById("team__item--4").classList.remove("team__item--activ");
-};
-
-document.getElementById("team__item--4").onclick = function() {
-	openTeam("team__item--4");
-
-	document.getElementById("team__item--1").classList.remove("team__item--activ");
-	document.getElementById("team__item--2").classList.remove("team__item--activ");
-	document.getElementById("team__item--3").classList.remove("team__item--activ");
-};
-
-function openTeam(team) {
-	document.getElementById(team).classList.toggle("team__item--activ");
+	if (e.target.closest(".team__item").classList.contains("team__item--activ") === false) {
+		for (let i = 0; i < teamMembers.length; i++) {
+			teamMembers[i].closest(".team__item").classList.remove("team__item--activ");
+		}
+		e.target.closest(".team__item").classList.add("team__item--activ");
+	} else {
+		e.target.closest(".team__item").classList.remove("team__item--activ");
+	}
 }
 
 // реализация списка "Меню"
 
-document.getElementById("carte__item--1").onclick = function() {
-	openCarte("carte__item--1");
+const carteElem = document.querySelectorAll(".carte__item");
 
-	document.getElementById("carte__item--2").classList.remove("carte__item--activ");
-	document.getElementById("carte__item--3").classList.remove("carte__item--activ");
+for (let i = 0; i < carteElem.length; i++) {
+	carteElem[i].addEventListener("click", toogleClass);
 };
 
-document.getElementById("carte__item--2").onclick = function() {
-	openCarte("carte__item--2");
+function toogleClass(e) {
+	e.preventDefault();
 
-	document.getElementById("carte__item--1").classList.remove("carte__item--activ");
-	document.getElementById("carte__item--3").classList.remove("carte__item--activ");
-};
-
-document.getElementById("carte__item--3").onclick = function() {
-	openCarte("carte__item--3");
-
-	document.getElementById("carte__item--1").classList.remove("carte__item--activ");
-	document.getElementById("carte__item--2").classList.remove("carte__item--activ");
-};
-
-function openCarte(carte) {
-	document.getElementById(carte).classList.toggle("carte__item--activ");
+	if (e.target.closest(".carte__item").classList.contains("carte__item--activ") === false) {
+		for (let i = 0; i < carteElem.length; i++) {
+			carteElem[i].closest(".carte__item").classList.remove("carte__item--activ");
+		}
+		e.target.closest(".carte__item").classList.add("carte__item--activ");
+	} else {
+		e.target.closest(".carte__item").classList.remove("carte__item--activ");
+	}
 }
+
+// реализация Слайдера
+
+const left = document.querySelector(".scroll__left-link");
+const right = document.querySelector(".scroll__right-link");
+const items = document.querySelector(".burger__items");
+
+right.addEventListener("click", function (e) {
+	loop("right", e);
+});
+
+left.addEventListener("click", function (e) {
+	loop("left", e);
+});
+
+function loop(direction, e) {
+	e.preventDefault();
+	if (direction === "right") {
+		items.appendChild(items.firstElementChild);
+	} else {
+		items.insertBefore(items.lastElementChild, items.firstElementChild);
+	}
+}
+
+// работа с формами
+
+const order = document.querySelector(".order");
+const sentButton = document.querySelector(".btn__submit");
+
+sentButton.addEventListener('click', function (e) {
+	e.preventDefault();
+
+	if (validateForm(order)) {
+		const data = {
+			name: order.elements.name.value,
+			phone: order.elements.phone.value,
+			comment: order.elements.comment.value,
+			to: 'tema131@bk.ru'
+		};
+
+		const xhr = new XMLHttpRequest();
+		xhr.responseType = 'json';
+		xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
+		xhr.send(JSON.stringify(data));
+		xhr.addEventListener('load', function(e) {
+			console.log(xhr.response);
+		});
+	};
+	// 	console.log(order.elements.name.value);
+	// 	console.log(order.elements.phone.value);
+	// 	console.log(order.elements.comment.value);
+
+	// 	if (order.elements.cash.value == "cash") {
+	// 		console.log("Потребуется сдача");
+	// 	} else {
+	// 		console.log("Оплата по карте");
+	// 	}
+
+	// 	if (order.elements.call.checked == true) {
+	// 		console.log("Нужно перезвонить");
+	// 	};
+
+	// 	if (validateForm(order)) {
+	// 		console.log("Всё ок!");
+	// 	};
+	});
+
+	function validateForm(form) {
+		let valid = true;
+
+		if (!validateField(form.elements.name)) {
+			valid = false;
+		};
+
+		if (!validateField(form.elements.phone)) {
+			valid = false;
+		};
+
+		if (!validateField(form.elements.comment)) {
+			valid = false;
+		};
+
+		return valid;
+	};
+
+	function validateField(field) {
+		field.nextElementSibling.textContent = field.validationMessage;
+		return field.checkValidity();
+	};
