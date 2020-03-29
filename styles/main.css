@@ -2102,3 +2102,50 @@ a {
 .burgers__price-wrapper {
   margin-right: 1.875rem;
 }
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #0005;
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 10000;
+}
+
+.overlay-container {
+  position: relative;
+}
+
+.content {
+  width: 200px;
+  background: #f9b43b;
+  border-radius: 5px;
+  padding: 10px;
+  color: #fff;
+  font-family: 'Ubuntu', Helvetica, sans-serif;
+  margin: 0;
+  text-align: center;
+}
+
+.close {
+  font: 16px Helvetica, sans-serif;
+  color: #fff;
+  position: absolute;
+  right: -5px;
+  top: -10px;
+  background: #e35028;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  text-decoration: none;
+}

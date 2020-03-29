@@ -1,0 +1,42 @@
+.overlay {
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background: #0005;
+   display: none;
+   justify-content: center;
+   align-items: center;
+   z-index: 10000;
+}
+
+.overlay-container {
+   position: relative;
+}
+
+.content {
+   width: 200px;
+   background: $yellow;
+   border-radius: 5px;
+   padding: 10px;
+   color: #fff;
+   @include ubuntu;
+	margin: 0;
+	text-align: center;
+}
+
+.close {
+   font: 16px Helvetica, sans-serif;
+   color: #fff;
+   position: absolute;
+   right: -5px;
+   top: -10px;
+   background: $red;
+   border-radius: 50%;
+   width: 20px;
+   height: 20px;
+   line-height: 20px;
+   text-align: center;
+   text-decoration: none;
+}

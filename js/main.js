@@ -49,7 +49,7 @@ function toogleClassCarte(ev) {
 			carteElem[i].closest(".carte__item").classList.remove("carte__item--activ");
 		}
 		ev.target.closest(".carte__item").classList.add("carte__item--activ");
-	} 	else {
+	} else {
 		ev.target.closest(".carte__item").classList.remove("carte__item--activ");
 	};
 };
@@ -82,63 +82,67 @@ function loop(direction, e) {
 const order = document.querySelector(".order");
 const sentButton = document.querySelector(".btn__submit");
 
+const overlayElement = document.querySelector(".overlay");
+
 sentButton.addEventListener('click', function (event) {
 	event.preventDefault();
 
 	if (validateForm(order)) {
-		const data = {
-			name: order.elements.name.value,
-			phone: order.elements.phone.value,
-			comment: order.elements.comment.value,
-			to: 'tema131@bk.ru'
-		};
+
+		var formData = new FormData(order);
+		formData.append("to", "tema131@bk.ru");
+		formData.delete("street");
+		formData.delete("house");
+		formData.delete("housing");
+		formData.delete("flat");
+		formData.delete("floor");
+		formData.delete("cash");
 
 		const xhr = new XMLHttpRequest();
-		xhr.responseType = 'json';
 		xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
-		xhr.send(JSON.stringify(data));
-		xhr.addEventListener('load', function() {
+		xhr.send(formData);
+		xhr.addEventListener('load', function () {
 			console.log(xhr.response);
+
 		});
+
+		overlayElement.style.display = "flex";
+
 	};
-	// 	console.log(order.elements.name.value);
-	// 	console.log(order.elements.phone.value);
-	// 	console.log(order.elements.comment.value);
 
-	// 	if (order.elements.cash.value == "cash") {
-	// 		console.log("Потребуется сдача");
-	// 	} else {
-	// 		console.log("Оплата по карте");
-	// 	}
-
-	// 	if (order.elements.call.checked == true) {
-	// 		console.log("Нужно перезвонить");
-	// 	};
-
-	// 	if (validateForm(order)) {
-	// 		console.log("Всё ок!");
-	// 	};
+	const closeElement = overlayElement.querySelector(".close");
+	closeElement.addEventListener("click", function (e) {
+		e.preventDefault();
+		overlayElement.style.display = "none";
 	});
 
-	function validateForm(form) {
-		let valid = true;
+	overlayElement.addEventListener("click", function (e) {
+		if (e.target === overlayElement) {
+			closeElement.click();
+		}
+	});
 
-		if (!validateField(form.elements.name)) {
-			valid = false;
-		};
+});
 
-		if (!validateField(form.elements.phone)) {
-			valid = false;
-		};
+function validateForm(form) {
+	let valid = true;
 
-		if (!validateField(form.elements.comment)) {
-			valid = false;
-		};
-
-		return valid;
+	if (!validateField(form.elements.name)) {
+		valid = false;
 	};
 
-	function validateField(field) {
-		field.nextElementSibling.textContent = field.validationMessage;
-		return field.checkValidity();
+	if (!validateField(form.elements.phone)) {
+		valid = false;
 	};
+
+	if (!validateField(form.elements.comment)) {
+		valid = false;
+	};
+
+	return valid;
+};
+
+function validateField(field) {
+	field.nextElementSibling.textContent = field.validationMessage;
+	return field.checkValidity();
+};
