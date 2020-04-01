@@ -1903,6 +1903,7 @@ a {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  width: 100%;
 }
 
 .burgers__center {
@@ -2046,7 +2047,7 @@ a {
   .burgers__kkal {
     top: 0;
     right: 0;
-    left: 84%;
+    left: auto;
   }
 }
 
