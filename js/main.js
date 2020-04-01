@@ -2,10 +2,14 @@
 
 document.getElementById("hamburger-menu-link").onclick = function () {
 	openBurgerMenu()
+
+	document.body.style.overflow = "hidden";
 };
 
 document.getElementById("hamburger-menu__img-link").onclick = function () {
 	openBurgerMenu()
+
+	document.body.style.overflow = "auto";
 };
 
 function openBurgerMenu() {
@@ -99,21 +103,21 @@ sentButton.addEventListener('click', function (event) {
 		formData.delete("cash");
 
 		const xhr = new XMLHttpRequest();
-		xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
+		xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail/');
 		xhr.send(formData);
-		xhr.addEventListener('load', function () {
-			console.log(xhr.response);
 
-		});
 
 		overlayElement.style.display = "flex";
 
+		document.body.style.overflow = "hidden";
 	};
 
 	const closeElement = overlayElement.querySelector(".close");
+
 	closeElement.addEventListener("click", function (e) {
 		e.preventDefault();
 		overlayElement.style.display = "none";
+		document.body.style.overflow = "auto";
 	});
 
 	overlayElement.addEventListener("click", function (e) {
@@ -145,4 +149,39 @@ function validateForm(form) {
 function validateField(field) {
 	field.nextElementSibling.textContent = field.validationMessage;
 	return field.checkValidity();
+};
+
+// блок с отзывами
+
+const btnReview = document.querySelectorAll(".btn--review");
+
+
+for (let i = 0; i < btnReview.length; i++) {
+
+	btnReview[i].addEventListener("click", (e) => {
+		e.preventDefault();
+
+		const overlayContent = document.querySelector(".content");
+		const reviewContent = document.querySelectorAll(".review__content");
+
+		overlayContent.textContent = reviewContent[i].textContent;
+
+		overlayElement.style.display = "flex";
+
+		document.body.style.overflow = "hidden";
+
+		const closeElement = overlayElement.querySelector(".close");
+
+		closeElement.addEventListener("click", function (e) {
+			e.preventDefault();
+			overlayElement.style.display = "none";
+			document.body.style.overflow = "auto";
+		});
+
+		overlayElement.addEventListener("click", function (e) {
+			if (e.target === overlayElement) {
+				closeElement.click();
+			}
+		});
+	})
 };
