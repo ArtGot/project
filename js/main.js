@@ -106,7 +106,9 @@ sentButton.addEventListener('click', function (event) {
 		xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail/');
 		xhr.send(formData);
 
+		const overlayContent = document.querySelector(".content");
 
+		overlayContent.textContent = "Данные отправлены";
 		overlayElement.style.display = "flex";
 
 		document.body.style.overflow = "hidden";
