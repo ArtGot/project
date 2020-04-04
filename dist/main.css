@@ -1585,11 +1585,14 @@ a {
   margin: 0 3%;
   overflow: hidden; }
 
-.burger__items {
-  display: flex;
-  position: relative;
-  justify-content: flex-start;
-  width: 100%; }
+.bx-wrapper {
+  background: none;
+  border: none;
+  box-shadow: none;
+  margin: 0 2%; }
+
+.bx-controls.bx-has-controls-direction.bx-has-pager {
+  display: none; }
 
 .burgers__center {
   display: flex;
