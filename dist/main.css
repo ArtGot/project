@@ -1299,8 +1299,11 @@ a {
   padding: 3.75rem 2%; }
 
 .contacts {
-  position: relative;
-  background: url("../img/contacts/contacts-bg.png") center center/cover no-repeat; }
+  position: relative; }
+
+.map {
+  width: 100%;
+  height: 100%; }
 
 .footer {
   background: url("../img/contacts/footer-bg.png") center center/cover no-repeat;
