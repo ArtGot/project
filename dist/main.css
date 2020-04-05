@@ -681,19 +681,24 @@ a {
   overflow: hidden;
   position: relative;
   width: 100%;
-  min-height: 100%; }
+  height: 100%; }
 
 .container {
   max-width: 58.75rem;
   width: 95%;
   margin: 0 auto; }
 
+.maincontent {
+  height: 100%;
+  transition: transform 1s; }
+
 .section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: 100vh;
-  min-height: 40.625rem; }
+  min-height: 40.625rem;
+  position: relative; }
   .section--align--top {
     justify-content: flex-start; }
 
@@ -1706,7 +1711,7 @@ a {
   margin-right: 1.875rem; }
 
 .overlay {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -1720,7 +1725,7 @@ a {
 .overlay-container {
   position: relative; }
 
-.content {
+.content-over {
   width: 200px;
   background: #f9b43b;
   border-radius: 5px;
@@ -1731,6 +1736,45 @@ a {
   text-align: center; }
 
 .close {
+  font: 16px Helvetica, sans-serif;
+  color: #fff;
+  position: absolute;
+  right: -5px;
+  top: -10px;
+  background: #e35028;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  text-decoration: none; }
+
+.overlay-reviews {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #0005;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000; }
+
+.overlay-container-reviews {
+  position: relative; }
+
+.content-reviews {
+  width: 200px;
+  background: #f9b43b;
+  border-radius: 5px;
+  padding: 10px;
+  color: #fff;
+  font-family: 'Ubuntu', Helvetica, sans-serif;
+  margin: 0;
+  text-align: center; }
+
+.close-reviews {
   font: 16px Helvetica, sans-serif;
   color: #fff;
   position: absolute;

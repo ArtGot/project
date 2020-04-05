@@ -71,7 +71,7 @@ a {
    overflow: hidden;
 	position: relative;
 	width: 100%;
-	min-height: 100%;
+	height: 100%;
 
 }
 
@@ -79,4 +79,9 @@ a {
 	max-width: rem(940px);
 	width: 95%;
    margin: 0 auto;
+}
+
+.maincontent {
+	height: 100%;
+	transition: transform 1s;
 }

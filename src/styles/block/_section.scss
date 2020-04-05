@@ -3,7 +3,8 @@
    flex-direction: column;
    justify-content: center;
    height: 100vh;
-   min-height: rem(650px);
+	min-height: rem(650px);
+	position: relative;
 
    &--align--top {
       justify-content: flex-start;

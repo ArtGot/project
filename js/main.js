@@ -104,7 +104,7 @@ sentButton.addEventListener('click', function (event) {
 		xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail/');
 		xhr.send(formData);
 
-		const overlayContent = document.querySelector(".content");
+		const overlayContent = document.querySelector(".content-over");
 
 		overlayContent.textContent = "Данные отправлены";
 		overlayElement.style.display = "flex";
@@ -154,6 +154,7 @@ function validateField(field) {
 // блок с отзывами
 
 const btnReview = document.querySelectorAll(".btn--review");
+const overlayRevElement = document.querySelector(".overlay-reviews");
 
 
 for (let i = 0; i < btnReview.length; i++) {
@@ -161,26 +162,26 @@ for (let i = 0; i < btnReview.length; i++) {
 	btnReview[i].addEventListener("click", (e) => {
 		e.preventDefault();
 
-		const overlayContent = document.querySelector(".content");
+		const overlayRevContent = document.querySelector(".content-reviews");
 		const reviewContent = document.querySelectorAll(".review__content");
 
-		overlayContent.textContent = reviewContent[i].textContent;
+		overlayRevContent.textContent = reviewContent[i].textContent;
 
-		overlayElement.style.display = "flex";
+		overlayRevElement.style.display = "flex";
 
 		document.body.style.overflow = "hidden";
 
-		const closeElement = overlayElement.querySelector(".close");
+		const closeRevElement = overlayRevElement.querySelector(".close-reviews");
 
-		closeElement.addEventListener("click", function (e) {
+		closeRevElement.addEventListener("click", function (e) {
 			e.preventDefault();
-			overlayElement.style.display = "none";
+			overlayRevElement.style.display = "none";
 			document.body.style.overflow = "auto";
 		});
 
-		overlayElement.addEventListener("click", function (e) {
-			if (e.target === overlayElement) {
-				closeElement.click();
+		overlayRevElement.addEventListener("click", function (e) {
+			if (e.target === overlayRevElement) {
+				closeRevElement.click();
 			}
 		});
 	})
@@ -328,3 +329,119 @@ myMap.behaviors.disable('scrollZoom');
 };
 
 ymaps.ready(init);
+
+// One Pages Scroll
+
+const sections = $(".section");
+const display = $(".maincontent");
+
+let inScroll = false;
+
+// const md = new MobileDetect(window.navigator.userAgent);
+// const isMobile = md.mobile();
+
+const countSectionPosition = (sectionEq) => {
+
+  const position = sectionEq * -100;
+  if (isNaN(position))
+    console.error("передано не верное значение в countSectionPositon");
+
+  return position;
+};
+
+const resetActiveClass = (item, eq) => {
+  item.eq(eq).addClass("active").siblings().removeClass("active");
+};
+
+const performTransition = (sectionEq) => {
+  if (inScroll) return;
+
+  inScroll = true;
+
+  const position = countSectionPosition(sectionEq);
+  const trasitionOver = 1000;
+  const mouseInertionOver = 300;
+
+  resetActiveClass(sections, sectionEq);
+
+  display.css({
+    transform: `translateY(${position}%)`,
+  });
+
+  setTimeout(() => {
+    resetActiveClass($(".fixed-menu__item"), sectionEq);
+    inScroll = false;
+  }, trasitionOver + mouseInertionOver);
+};
+
+const scroller = () => {
+  const activeSection = sections.filter(".active");
+  const nextSection = activeSection.next();
+  const prevSection = activeSection.prev();
+
+  return {
+    next() {
+      if (nextSection.length) {
+        performTransition(nextSection.index());
+      }
+    },
+    prev() {
+      if (prevSection.length) {
+        performTransition(prevSection.index());
+      }
+    },
+  };
+};
+
+$(window).on("wheel", (e) => {
+  const deltaY = e.originalEvent.deltaY;
+  const windowScroller = scroller();
+
+  if (deltaY > 0) {
+    windowScroller.next();
+  }
+
+  if (deltaY < 0) {
+    windowScroller.prev();
+  }
+});
+
+$(document).on("keydown", (e) => {
+  const tagName = e.target.tagName.toLowerCase();
+  const windowScroller = scroller();
+  const userTypingInInputs = tagName === "input" || tagName === "textarea";
+
+  if (userTypingInInputs) return;
+
+  switch (e.keyCode) {
+    case 38:
+      windowScroller.prev();
+      break;
+    case 40:
+      windowScroller.next();
+      break;
+  }
+});
+
+$("[data-scroll-to]").on("click", (e) => {
+  e.preventDefault();
+
+  const $this = $(e.currentTarget);
+  const target = $this.attr("data-scroll-to");
+
+  performTransition(target);
+});
+
+// if (isMobile) {
+//   $("body").swipe({
+//     swipe: (event, direction) => {
+//       let scrollDirection;
+//       const windowScroller = scroller();
+
+//       if (direction === "up") scrollDirection = "next";
+//       if (direction === "down") scrollDirection = "prev";
+
+//       windowScroller[scrollDirection]();
+//     },
+//   });
+// }
