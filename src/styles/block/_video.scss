@@ -1,5 +1,5 @@
 .video {
-   background: url('/img/video/video_bg.png') center center/cover no-repeat;
+   background: url('./img/video/video_bg.png') center center/cover no-repeat;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -10,7 +10,7 @@
 }
 
 .player__splash {
-	background: url('/img/video/splash.png') center center/cover no-repeat;
+	background: url('./img/video/splash.png') center center/cover no-repeat;
 	position: absolute;
 	top: 0;
 	left: 0;
