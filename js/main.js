@@ -60,44 +60,23 @@ function toogleClassCarte(ev) {
 
 // реализация Слайдера
 
-// const left = document.querySelector(".scroll__left-link");
-// const right = document.querySelector(".scroll__right-link");
-// const items = document.querySelector(".burger__items");
-
-// right.addEventListener("click", function (e) {
-// 	loop("right", e);
-// });
-
-// left.addEventListener("click", function (e) {
-// 	loop("left", e);
-// });
-
-// function loop(direction, e) {
-// 	e.preventDefault();
-// 	if (direction === "right") {
-// 		items.appendChild(items.firstElementChild);
-// 	} else {
-// 		items.insertBefore(items.lastElementChild, items.firstElementChild);
-// 	}
-// }
-
-$(document).ready(function(){
+$(document).ready(function () {
 
 	let slider = $('.slider').bxSlider();
 
-	$('.scroll__left-link').on('click',function(e){
+	$('.scroll__left-link').on('click', function (e) {
 		e.preventDefault();
 
 		slider.goToPrevSlide();
 	});
 
-	$('.scroll__right-link').on('click',function(e){
+	$('.scroll__right-link').on('click', function (e) {
 		e.preventDefault();
 
 		slider.goToNextSlide();
 	});
 
- });
+});
 
 
 // работа с формами
@@ -206,3 +185,108 @@ for (let i = 0; i < btnReview.length; i++) {
 		});
 	})
 };
+
+// Реализация видеоплеера
+
+let player;
+const playerContainer = $('.player');
+
+let eventsInit = () => {
+	$(".player__start").click(e => {
+		e.preventDefault();
+
+		if (playerContainer.hasClass('paused')){
+			player.pauseVideo();
+		} else {
+			player.playVideo();
+		}
+	});
+
+	$(".player__playback").click(e => {
+	const bar = $(e.currentTarget);
+	const clickedPosition = e.originalEvent.layerX;
+	const newButtonPositinPercent = (clickedPosition / bar.width()) * 100;
+	const newPlaybackPositionSec = (player.getDuration() / 100) * newButtonPositinPercent;
+
+	$(".player__playback-button").css({
+		left: `${newButtonPositinPercent}%`
+	});
+
+	player.seekTo(newPlaybackPositionSec);
+	});
+
+	$(".player__splash").click(e => {
+	player.playVideo();
+	});
+
+	$(".player__volum").click(e => {
+		const bar = $(e.currentTarget);
+		const clickedPosition = e.originalEvent.layerX;
+		const newButtonPositinPercent = (clickedPosition / bar.width()) * 100;
+	
+		$(".player__volum-button").css({
+			left: `${newButtonPositinPercent}%`
+		});
+	
+		player.setVolume(newButtonPositinPercent);
+		});
+	
+};
+
+const onPlayerReady = () => {
+	let interval;
+	const durationSec = player.getDuration();
+	const volum = player.getVolume();
+
+
+	interval = setInterval(() => {
+	const completedSec = player.getCurrentTime();
+	const completedPercent = (completedSec / durationSec) * 100;
+
+	$(".player__playback-button").css({
+		left: `${completedPercent}%`
+	});
+	});
+
+	$(".player__volum-button").css({
+		left: `${volum}%`
+	});
+};
+
+const onPlayerStateChange = event => {
+
+	switch (event.data) {
+	case 1:
+		playerContainer.addClass("active");
+		playerContainer.addClass("paused");
+
+		break;
+
+	case 2:
+		playerContainer.removeClass("active");
+		playerContainer.removeClass("paused");
+		break;
+	};
+};
+
+function onYouTubeIframeAPIReady() {
+	player = new YT.Player('yt-player', {
+		height: '405',
+		width: '660',
+		videoId: 'vZ1zOPfEgdg',
+		events: {
+			'onReady': onPlayerReady,
+			'onStateChange': onPlayerStateChange
+		},
+		playerVars: {
+			controls: 0,
+			disablekb: 0,
+			showinfo: 0,
+			rel: 0,
+			autoplay: 0,
+			modestbranding: 0
+		}
+	});
+};
+
+eventsInit();
