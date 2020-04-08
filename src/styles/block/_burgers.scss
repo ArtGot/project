@@ -146,6 +146,7 @@
 
 }
 
+
 .burgers__price {
 	@include gagalin;
 	font-size: rem(30px);
@@ -173,3 +174,38 @@
 	margin-right: rem(30px);
 }
 
+.burgers__composition--hover {
+	display: none;
+	flex-direction: column;
+	width: 170px;
+	height: 155px;
+	border: $orange solid 2px;
+	border-radius: 5px;
+	background: #fff;
+	position: absolute;
+	top: 0;
+	right: -170px;
+	color: $black;
+}
+
+.burgers__composition {
+	cursor: pointer;
+	
+	&:hover .burgers__composition--hover {
+		display: flex;
+	}
+
+}
+
+
+
+.burgers__composition-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.burgers__composition-icon {
+	width: 30px;
+	height: 30px;
+}
